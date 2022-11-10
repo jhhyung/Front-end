@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { ReactComponent as UpIcon } from "../../shared/icon/24_ena_feedback.svg";
+import { ReactComponent as UpIcon } from "../../shared/icon/24_ena_floating_up.svg";
 import { ReactComponent as MakeTuningIcon } from "../../shared/icon/ena_floating_make tuning_2.svg";
 import { deleteVideo } from "../../redux/modules/collectionSlice";
 import { useDispatch } from "react-redux";
@@ -10,7 +10,7 @@ const StickyButtons = () => {
   const dispatch = useDispatch();
 
   // 피드백 이벤트 끝난 후 다시 들어감
-  const ScrollTop = () => {
+  const scrollTop = () => {
     window.scroll({
       top: 0,
       behavior: "smooth",
@@ -22,7 +22,7 @@ const StickyButtons = () => {
 
   return (
     <StickyContainer>
-      <Btn onClick={goFeedback}>
+      <Btn onClick={scrollTop}>
         <UpIcon />
       </Btn>
       <MakeTuningBtn
@@ -56,6 +56,7 @@ const Btn = styled.div`
   box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.23);
   text-align: center;
   background-color: #fff;
+  cursor: pointer;
   & svg {
     width: 3rem;
     height: 3rem;
